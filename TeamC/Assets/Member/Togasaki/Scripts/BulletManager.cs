@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public interface IHit
-{
-    void 
-}
+//public interface IHit
+//{
+//    void 
+//}
 
 
 public class BulletManager : MonoBehaviour

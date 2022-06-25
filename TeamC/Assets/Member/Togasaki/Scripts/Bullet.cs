@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
 {
     /// <summary>
     /// 弾のタイプ
+    /// 0だったら通常弾、１なら治す玉
     /// </summary>
     public int bulletType = 0;
 

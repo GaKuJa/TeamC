@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// キャラクターの向き
+/// </summary>
 public enum Direction
 {
     right,
@@ -20,6 +23,8 @@ public class Gun : MonoBehaviour
     private Direction playerDirection;
 
     private Coroutine shootCoroutine;
+
+
 
     private void Update()
     {
