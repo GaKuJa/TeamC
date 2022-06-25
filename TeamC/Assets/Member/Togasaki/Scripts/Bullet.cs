@@ -26,6 +26,7 @@ public class Bullet : MonoBehaviour
     /// </summary>
     public float bulletSpeed;
 
+
     /// <summary>
     /// ‰½‚©‚É‚ ‚½‚Á‚½Žž
     /// </summary>
@@ -42,5 +43,5 @@ public class Bullet : MonoBehaviour
     {
         objectPool.Release(gameObject);
     }
-
+    
 }

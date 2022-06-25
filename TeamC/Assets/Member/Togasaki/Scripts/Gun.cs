@@ -24,7 +24,26 @@ public class Gun : MonoBehaviour
 
     private Coroutine shootCoroutine;
 
+    private float num = 2022.324233f;
 
+    int A = 1;
+    int B = 1;
+
+    void Kansuu()
+    {
+        int Answer = A + B;
+        Debug.Log(Answer);
+    }
+
+    private void FixedUpdate()
+    {
+
+    }
+
+    void Start()
+    {
+
+    }
 
     private void Update()
     {
