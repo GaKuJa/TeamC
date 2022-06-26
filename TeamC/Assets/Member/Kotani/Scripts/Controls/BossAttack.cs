@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class BossAttack : MonoBehaviour
 {
-    [SerializeField] GameObject needle = null;
-    //弾を保持（プーリング）する空のオブジェクト
-    Transform needles;
-    
+    ////////////////////////////////
+    ///落ちて来る注射器の管理（プーリング）
+    ///laserの挙動の制御
+    ////////////////////////////////
+    [SerializeField]
+    private GameObject needle = null;
+    //弾を保持する空のオブジェクト
+    private Transform needles;
+    [SerializeField]
+    private GameObject laser = null;
     void Start()
     {
         needles = new GameObject("narsnider").transform;
@@ -20,6 +26,16 @@ public class BossAttack : MonoBehaviour
         //弾生成関数を呼び出し
         InstBullet();
         }
+    }
+    public IEnumerator LaserStart()
+    {
+        //trueにしてから1秒後に発射
+        laser.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+        laser.transform.Find("laser").gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        laser.SetActive(false);
+        laser.transform.Find("laser").gameObject.SetActive(false);
     }
 
     void InstBullet()
@@ -34,23 +50,7 @@ public class BossAttack : MonoBehaviour
                 return;
             }
         }
-        //非アクティブなオブジェクトがない場合新規生成
-
         //生成時にneedleの子オブジェクトにする
         Instantiate(needle,needles);
     }
-
-    #region ボスの攻撃
-    private void AttackEnemy()
-    {
-        //注射器振らせるやつ
-            //降らせる場所と速度を入れて呼ぶ
-
-            
-        //機雷設置
-            //設置する場所を入れて呼ぶ（出現時間は固定）
-        //正面レーザー
-            //どっち方向へレーザーを出すか呼ぶだけでOK
-    }
-    #endregion
 }

@@ -15,19 +15,19 @@ public class BossController : MonoBehaviour
 
     void Start()
     {
-        #region 敵の行動制御
         StartCoroutine(EnemyMotion());
-        #endregion
     }
     void Update()
     {
+        //ボスが何秒ごとに移動するか
         t += Time.deltaTime;
     }
+
     private IEnumerator EnemyMotion()
     {
         while (true) // このGameObjectが有効な間実行し続ける
         {
-            int r = Random.Range(0, 2);
+            int r = Random.Range(0, 3);
             switch(r)
             {
             case 0:
@@ -37,7 +37,7 @@ public class BossController : MonoBehaviour
             
             case 1:
             //Enemyが移動する
-            if(_bossMove.GetMoveFlag() == false && t >= 10f)
+            if(_bossMove.GetMoveFlag() == false && t >= 5f)
             {
                 _bossMove.BossMoveStart();
                 t=0;
@@ -46,6 +46,11 @@ public class BossController : MonoBehaviour
             {
                 _bossAttack.BulletStart();
             }
+            break;
+            
+            case 2:
+            //レーザー
+            StartCoroutine(_bossAttack.LaserStart());
             break;
 
             default:

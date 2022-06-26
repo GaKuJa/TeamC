@@ -5,40 +5,56 @@ using UnityEngine;
 public class DemoPlayerStatus : MonoBehaviour
 {
     [SerializeField]
-    private int Hp=6;
-    private int MaxHp;
+    private int hp=6;
+    private int maxHp;
+    private Vector3 fastPoj;
     [SerializeField]
     private DemoHelsChanger _demoHelsChanger;
-
+    
+    #region Set
     public void SetHp(int Value)
     {
-        Hp=Value;
+        hp=Value;
+    }
+    #endregion
+
+    #region Get
+    public Vector3 GetFastPoj()
+    {
+        return fastPoj;
+    }
+    public int GetMaxHp()
+    {
+        return maxHp;
     }
     public int GetHp()
     {
-        return Hp;
+        return hp;
     }
+    #endregion
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Qキーで全回復");
-        MaxHp = Hp;
-        _demoHelsChanger.helsChange(Hp);
+        maxHp = hp;
+        _demoHelsChanger.helsChange(hp);
+        fastPoj = this.transform.localPosition;
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {//HPの確認用
     if (Input.GetKeyDown(KeyCode.Q))
         {
-            Hp=MaxHp;
-            _demoHelsChanger.helsChange(Hp);
+            hp=maxHp;
+            _demoHelsChanger.helsChange(hp);
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Hp-=1;
+        //当たったら１減少
+        hp-=1;
         Debug.Log("hit");
-        _demoHelsChanger.helsChange(Hp);
+        _demoHelsChanger.helsChange(hp);
     }
 }

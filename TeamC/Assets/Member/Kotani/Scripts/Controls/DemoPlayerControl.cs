@@ -7,9 +7,12 @@ public class DemoPlayerControl : MonoBehaviour
     #region 移動関連
     private Vector3 movingDirecion;
     private Vector3 movingVelocity;
-    public float speed = 1000f;
-    public float JumpPower = 1000f;
-    public int jumpmax=2;
+    [SerializeField]
+    private float speed = 1000f;
+    [SerializeField]
+    private float JumpPower = 1000f;
+    [SerializeField]
+    private int jumpMax=2;
     #endregion
 
     // PlayerのRigidbody取得
@@ -38,10 +41,7 @@ public class DemoPlayerControl : MonoBehaviour
 
     void Jump()
     {
-        if(jumpmax >=1){
-            player.AddForce(transform.up * JumpPower, ForceMode2D.Impulse);
-            jumpmax--;
-        }
+      player.AddForce(transform.up * JumpPower, ForceMode2D.Impulse);
     }
     #endregion
 }

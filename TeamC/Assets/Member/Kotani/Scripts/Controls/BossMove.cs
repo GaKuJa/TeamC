@@ -7,11 +7,11 @@ public class BossMove : MonoBehaviour
     //ボスの動きを書くやつ
     //呼ばれる前提
     [SerializeField]
-    private bool MoveFlag = false;
+    private bool moveFlag = false;
 
     public bool GetMoveFlag()
     {
-        return MoveFlag;
+        return moveFlag;
     }
     [SerializeField]
     private bool topFlag = false;
@@ -35,12 +35,12 @@ public class BossMove : MonoBehaviour
 
     public void BossMoveStart()
     {
-        MoveFlag = true;
+        moveFlag = true;
     }
 
     private void Update()
     {
-        if(MoveFlag && topFlag == false)
+        if(moveFlag && topFlag == false)
         {
             StartCoroutine(UpEnemy());
         }
@@ -54,18 +54,6 @@ public class BossMove : MonoBehaviour
     #region Up
     private IEnumerator UpEnemy()
     {
-        //画面外まで飛んで右なら左へ 左なら右へ行く
-        /*if(this.transform.localPosition == leftpoj)
-        {
-            i=0;
-            EnemyPojFlag=true;
-        }
-        if(this.transform.localPosition == rightpoj)
-        {
-            i=0;
-            EnemyPojFlag=false;
-        }*/
-
         if(EnemyPojFlag)
         {
             if(this.transform.localPosition.y >= 500f)
@@ -129,25 +117,11 @@ public class BossMove : MonoBehaviour
         }
         else
         {
-            MoveFlag = false;
+            moveFlag = false;
             topFlag=false;
             EnemyPojFlag = !EnemyPojFlag;
             i=0;
         }
     }
     #endregion
-
-    #region ボスの攻撃
-    private void AttackEnemy()
-    {
-
-        //注射器振らせるやつ
-            //降らせる場所と速度を入れて呼ぶ
-        //機雷設置
-            //設置する場所を入れて呼ぶ（出現時間は固定）
-        //正面レーザー
-            //どっち方向へレーザーを出すか呼ぶだけでOK
-    }
-    #endregion
-
 }

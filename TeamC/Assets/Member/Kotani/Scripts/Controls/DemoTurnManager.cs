@@ -9,11 +9,11 @@ public class DemoTurnManager : MonoBehaviour
     [SerializeField]
     private DemoPlayerStatus _demoPlayerStatus;
     [SerializeField]
-    private GameObject GameOverMask;
+    private GameObject gameOverMask;
     // Start is called before the first frame update
     void Start()
     {
-        GameOverMask.SetActive(false);
+        gameOverMask.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,7 +25,16 @@ public class DemoTurnManager : MonoBehaviour
         }
         else
         {
-            GameOverMask.SetActive(true);
+            gameOverMask.SetActive(true);
         }
+    }
+    public void OnClick()
+    {
+        //HPを回復させて初期座標に戻す
+            //仮なので数字を直に入れています
+        _demoPlayerStatus.SetHp(_demoPlayerStatus.GetMaxHp());
+        _demoPlayerStatus.transform.localPosition =_demoPlayerStatus.GetFastPoj();
+        gameOverMask.SetActive(false);
+        
     }
 }
