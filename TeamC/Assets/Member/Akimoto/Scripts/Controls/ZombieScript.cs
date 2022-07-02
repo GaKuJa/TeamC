@@ -18,8 +18,8 @@ public class ZombieScript : MonoBehaviour
     {
         moveTime += Time.deltaTime;
         var nowPosition = (player.transform.position - enemy.transform.position)/(moveSpeed*moveTime);
-        // 差/(スピード*時間)
-        enemy.transform.position = Vector3.Lerp(enemy.transform.position,player.transform.position,nowPosition)
+        // 差/(スピード*時間
+        // enemy.transform.position = Vector3.Lerp(enemy.transform.position,player.transform.position,nowPosition)
         
     }
 }

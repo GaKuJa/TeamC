@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="65f9fef8-61a1-46b8-a408-90d47b8ca073" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Akimoto/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Akimoto/EnemyScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Akimoto/Enemy.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Akimoto/EnemyScript.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Akimoto/Scripts/Controls/ZombieScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Akimoto/Scripts/Controls/ZombieScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Togasaki/Scripts/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Togasaki/Scripts/BulletScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Togasaki/Scripts/Bullet.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Togasaki/Scripts/BulletScript.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Togasaki/Scripts/BulletManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Togasaki/Scripts/BulletManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Member/Togasaki/Scripts/Gun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Member/Togasaki/Scripts/Gun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/CanvasScalerEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/AspectRatioFitterEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Member/Akimoto/Scripts/Managers/EnemyManager.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

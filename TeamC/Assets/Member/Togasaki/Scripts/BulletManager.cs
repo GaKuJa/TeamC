@@ -16,30 +16,30 @@ public class BulletManager : MonoBehaviour
     /// </summary>
     public ObjectPool<GameObject> bulletObjectPool;
 
-    [SerializeField, Header("‰Šú‚ÌƒIƒuƒWƒFƒNƒg¶¬—Ê")]
+    [SerializeField, Header("ï¿½ï¿½ï¿½ï¿½ï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")]
     private int defaultCapacity = 20;
 
-    [SerializeField, Header("ƒv[ƒ‹‚ÌÅ‘åƒTƒCƒY")]
+    [SerializeField, Header("ï¿½vï¿½[ï¿½ï¿½ï¿½ÌÅ‘ï¿½Tï¿½Cï¿½Y")]
     private int poolMaxSize = 100;
 
-    [SerializeField, Header("ƒv[ƒ‹‚·‚é’eƒIƒuƒWƒFƒNƒg")]
+    [SerializeField, Header("ï¿½vï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½eï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g")]
     private GameObject bulletObj;
 
-    [SerializeField, Header("’e‚ğo‚·ˆÊ’u")]
+    [SerializeField, Header("ï¿½eï¿½ï¿½ï¿½oï¿½ï¿½ï¿½Ê’u")]
     private Transform playerTransform;
 
-    [SerializeField, Header("•Ô‹p‚³‚ê‚½Û‚ÌˆÊ’u")]
+    [SerializeField, Header("ï¿½Ô‹pï¿½ï¿½ï¿½ê‚½ï¿½Û‚ÌˆÊ’u")]
     private Transform poolPosition;
 
-    [SerializeField, Header("’e‚Ì‘¬‚³")]
+    [SerializeField, Header("ï¿½eï¿½Ì‘ï¿½ï¿½ï¿½")]
     private float bulletSpeed;
 
-    [SerializeField, Header("ˆê‰ñ‚Ìˆ—‚Å“®‚­’e‚Ì‹——£")]
+    [SerializeField, Header("ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½Å“ï¿½ï¿½ï¿½ï¿½eï¿½Ì‹ï¿½ï¿½ï¿½")]
     private float distance = 0.01f;
 
     private void Start()
     {
-        // ƒIƒuƒWƒFƒNƒgƒv[ƒ‹‚ğì¬
+        // ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½vï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ì¬
         bulletObjectPool = new ObjectPool<GameObject>(
         OnCreatePoolObject,
         OnTakeFromPool,
@@ -52,17 +52,17 @@ public class BulletManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ¶¬ˆ—
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     /// </summary>
-    /// <returns>¶¬‚µ‚½ƒIƒuƒWƒFƒNƒg</returns>
+    /// <returns>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g</returns>
     private GameObject OnCreatePoolObject()
     {
-        // ¶¬ˆ—
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         GameObject bullet = Instantiate(bulletObj, poolPosition.position, Quaternion.identity);
-        //PooledObjectƒXƒNƒŠƒvƒg‚ğget
-        Bullet pooled = bullet.GetComponent<Bullet>();
+        //PooledObjectï¿½Xï¿½Nï¿½ï¿½ï¿½vï¿½gï¿½ï¿½get
+        BulletScript pooled = bullet.GetComponent<BulletScript>();
 
-        //ƒv[ƒ‹‚µ‚½ƒIƒuƒWƒFƒNƒg‚Ì•Ï”‚Éî•ñ‚ğ‘ã“ü
+        //ï¿½vï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì•Ïï¿½ï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½
         pooled.objectPool = bulletObjectPool;
         pooled.poolPos = poolPosition;
         pooled.bulletSpeed = bulletSpeed;
@@ -71,17 +71,17 @@ public class BulletManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒv[ƒ‹‚©‚çæ‚èo‚·ˆ—
+    /// ï¿½vï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     private void OnTakeFromPool(GameObject obj)
     {
-        //ƒv[ƒ‹‚©‚çæ‚èo‚³‚ê‚½‚ç’e‚ğƒvƒŒƒCƒ„[‚ÌˆÊ’u‚Ö
+        //ï¿½vï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½ê‚½ï¿½ï¿½eï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ÌˆÊ’uï¿½ï¿½
         obj.transform.position = playerTransform.position;
         obj.SetActive(true);
     }
 
     /// <summary>
-    /// ƒv[ƒ‹‚É–ß‚·ˆ—
+    /// ï¿½vï¿½[ï¿½ï¿½ï¿½É–ß‚ï¿½ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     private void OnReturnedToPool(GameObject obj)
     {
@@ -89,7 +89,7 @@ public class BulletManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒv[ƒ‹‚Ì‹–—e—Ê‚ğ’´‚¦‚½ê‡‚Ì”jŠüˆ—
+    /// ï¿½vï¿½[ï¿½ï¿½ï¿½Ì‹ï¿½ï¿½eï¿½Ê‚ğ’´‚ï¿½ï¿½ï¿½ï¿½ê‡ï¿½Ì”jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     private void OnDestroyPoolObject(GameObject obj)
     {

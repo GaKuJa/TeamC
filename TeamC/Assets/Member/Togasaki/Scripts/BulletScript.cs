@@ -3,31 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class Bullet : MonoBehaviour
+public class BulletScript : MonoBehaviour
 {
     /// <summary>
-    /// ’e‚Ìƒ^ƒCƒv
-    /// 0‚¾‚Á‚½‚ç’Êí’eA‚P‚È‚ç¡‚·‹Ê
+    /// ï¿½eï¿½Ìƒ^ï¿½Cï¿½v
+    /// 0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êï¿½eï¿½Aï¿½Pï¿½È‚ç¡ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     public int bulletType = 0;
 
     /// <summary>
-    /// BulletManager‚ÌObjectpool
+    /// BulletManagerï¿½ï¿½Objectpool
     /// </summary>
     public ObjectPool<GameObject> objectPool;
 
     /// <summary>
-    /// “®‚«I‚í‚Á‚Ä•Ô‹p‚³‚ê‚éÛ‚ÌêŠ
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½Ä•Ô‹pï¿½ï¿½ï¿½ï¿½ï¿½Û‚ÌêŠ
     /// </summary>
     public Transform poolPos;
 
     /// <summary>
-    /// ’e‚Ì‘¬‚³
+    /// ï¿½eï¿½Ì‘ï¿½ï¿½ï¿½
     /// </summary>
     public float bulletSpeed;
 
     /// <summary>
-    /// ‰½‚©‚É‚ ‚½‚Á‚½
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
@@ -36,7 +36,7 @@ public class Bullet : MonoBehaviour
     }
 
     /// <summary>
-    /// ‰æ–ÊŠO‚Éo‚½ƒŠƒŠ[ƒX
+    /// ï¿½ï¿½ÊŠOï¿½Éoï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½X
     /// </summary>
     private void OnBecameInvisible()
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// ƒLƒƒƒ‰ƒNƒ^[‚ÌŒü‚«
+/// ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½ÌŒï¿½ï¿½ï¿½
 /// </summary>
 public enum Direction
 {
@@ -17,7 +17,7 @@ public class Gun : MonoBehaviour
     [SerializeField, Header("BulletManager")]
     private BulletManager bulletManager;
 
-    [SerializeField, Header("’e‚Ì‘Å‚¿o‚·•ûŒüv2")]
+    [SerializeField, Header("ï¿½eï¿½Ì‘Å‚ï¿½ï¿½oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½v2")]
     private Vector2 bulletForce;
 
     private Direction playerDirection;
@@ -59,14 +59,14 @@ public class Gun : MonoBehaviour
     }
 
     /// <summary>
-    /// ’e‚ğo‚·
-    /// ’e‚ÌƒXƒNƒŠƒvƒg‚É”Ô†‚ğ“n‚·
-    /// 0:’Êí’eA1FlŠÔ‰»‚·‚é’eH
+    /// ï¿½eï¿½ï¿½ï¿½oï¿½ï¿½
+    /// ï¿½eï¿½ÌƒXï¿½Nï¿½ï¿½ï¿½vï¿½gï¿½É”Ôï¿½ï¿½ï¿½nï¿½ï¿½
+    /// 0:ï¿½Êï¿½eï¿½A1ï¿½Fï¿½lï¿½Ô‰ï¿½ï¿½ï¿½ï¿½ï¿½eï¿½H
     /// </summary>
     public void ShootByID(int id = 0)
     {
         var obj = bulletManager.bulletObjectPool.Get();
-        obj.GetComponent<Bullet>().bulletType = id;
+        obj.GetComponent<BulletScript>().bulletType = id;
 
         switch(playerDirection)
         {
